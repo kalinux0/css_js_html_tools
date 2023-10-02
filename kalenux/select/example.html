@@ -1,0 +1,82 @@
+<style>
+    @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap);
+    html,
+    body {
+        min-height: 100%;
+        font-family: Montserrat, sans-seriff;
+    }
+    
+     :root {
+        --primary-color: #1d212c;
+        --secondary-color: #ec3944;
+        --gray-color: #f3f2f0;
+        --light-panel-color: #f3f3f3;
+        --panel-color: #8d8d8d;
+        --medium-panel-color: #4a4a4a;
+        --dark-panel-color: #000000;
+    }
+</style>
+<link href="./select.css" rel="stylesheet">
+<style>
+    .kalenux-select-holder {
+        margin-bottom: 1rem;
+    }
+    
+    .kalenux-select-holder,
+    .kalenux-search::placeholder {
+        color: white
+    }
+</style>
+<h3>Default selector</h3>
+<div class="kalenux-select-holder">
+    <select class="kalenux-selects filter" data-type="select" data-name="test" id="test1" data-placeholder="Test 1">
+        <option value="10">10</option> 
+        <option value="20">20</option>
+        <option value="40">40</option>
+        <option value="80">80</option>
+    </select>
+</div>
+<h3>Selector with data</h3>
+<div class="kalenux-select-holder">
+    <select class="kalenux-selects filter" data-type="select" data-name="test2" id="test2" data-placeholder="Test 2" data-data="randoms"></select>
+</div>
+<h3>Selector with dictionary crossed data</h3>
+<div class="kalenux-select-holder">
+    <select class="kalenux-selects filter" data-type="select" data-name="test2" id="test2" data-placeholder="Test 2" data-data="randoms" data-cross="1"></select>
+</div>
+<h3>Selector with all selection</h3>
+<div class="kalenux-select-holder">
+    <select class="kalenux-selects filter" data-type="select" data-name="test2" id="test2" data-placeholder="Test 2" data-data="randoms" data-all="1"></select>
+</div>
+<script>
+    var firer = [];
+
+    function setElems(a, b) {
+        var c, d, i;
+        c = document.getElementsByClassName(a);
+        d = c.length;
+        for (i = 0; i < d; i++) {
+            b(c[0]);
+        }
+    }
+
+    var randoms = {
+        "random_key_1": "random_val_1",
+        "random_key_2": "random_val_2",
+        "random_key_3": "random_val_3",
+        "random_key_4": "random_val_4",
+        "random_key_5": "random_val_5"
+    }
+</script>
+<script src="./select.js" defer></script>
+<script>
+    document.body.onload = function() {
+        var a, i;
+        a = firer.length
+        for (i = 0; i < a; i++) {
+            if (firer[i])
+                firer[i]();
+        }
+        firer = null;
+    }
+</script>

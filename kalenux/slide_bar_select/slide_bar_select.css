@@ -1,0 +1,112 @@
+.kalenux-slide-touchs {
+    display: none;
+    width: 100%;
+    margin: auto
+}
+
+.kalenux-slide-touch {
+    width: 100%;
+    text-align: center;
+    display: table
+}
+
+.kalenux-slide-bar {
+    font-size: .9rem;
+    position: relative
+}
+
+.kalenux-slide-toggles {
+    width: 100%;
+    background: #16081a;
+    border-radius: 999px;
+    margin-top: 1rem;
+    height: 1.5rem;
+    position: relative;
+    display: none;
+}
+
+.kalenux-slide-toggle-text {
+    background: #fff;
+    color: #000;
+    font-size: .9rem;
+    display: table;
+    align-self: center;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    height: 1rem;
+    width: 1rem;
+    padding: 0;
+    cursor: pointer
+}
+
+.kalenux-slide-toggle {
+    background: #f58151;
+    border-radius: 999px;
+    height: 20%;
+    width: 0%;
+    position: relative;
+    z-index: 2;
+    top: 50%;
+    transform: translate(0, -50%)
+}
+
+.kalenux-slide-toggle-text-inner {
+    position: absolute;
+    top: calc(100% + .5rem);
+    color: var(--theme-color);
+    white-space: nowrap;
+    background: #ffffffb5;
+    border-radius: 100rem;
+    padding: .25rem .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: .75rem;
+    user-select: none;
+}
+
+.kalenux-slide-inputs {
+    display: flex;
+}
+
+.kalenux-slide-input {
+    width: 100%;
+    background: transparent;
+    background: var(--table-color);
+    border: 0;
+    border-radius: .25rem;
+    padding: .5rem 1rem;
+    box-sizing: border-box;
+    color: white;
+}
+
+.kalenux-slide-input-holder:first-child {
+    margin-right: .25rem;
+}
+
+.kalenux-slide-input-holder {
+    width: 100%;
+}
+
+.kalenux-slide-opener {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    transform: rotate(90deg);
+    margin-bottom: 1rem;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.kalenux-slide-opener[data-state="open"] {
+    transform: rotate(-90deg);
+}
+
+.kalenux-slide-opener:hover {
+    opacity: .7;
+}
+
+.kalenux-slide-toggles[data-state="open"] {
+    display: flex;
+}

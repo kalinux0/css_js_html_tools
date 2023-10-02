@@ -1,0 +1,94 @@
+!panel_tags!
+<link href="/css/main/general/main.css" rel="stylesheet">
+<link rel="preload" href="/css/main/products/general/boost.top.css" as="style" onload="this.rel='stylesheet'">
+<link rel="preload" href="/css/main/products/general/torder.bot.css" as="style" onload="this.rel='stylesheet'">
+<link rel="stylesheet" href="/plugins/airdatepicker/css/datepicker.min.css">
+<link href="/css/lib/kalenux/select.css" rel="stylesheet">
+<link href="/css/lib/kalenux/card_table.css" rel="stylesheet">
+<link href="/css/users/accounts.css" rel="stylesheet">
+<link href="/css/users/orders.css" rel="stylesheet">
+<link href="/css/main/account.css" rel="stylesheet">
+<title>{my_orders} - {site}</title>
+</head>
+
+<body class="preload">
+    <div class="menu">
+        <div class="menu-outer">
+            <div class="menu-inner">
+                <div class="menu-bg"></div>
+                !panel_header!
+                <div class="menu-right">
+                    <div class="mr-top">
+                        <div class="notifications-outer">
+                            <span class="icon-notifications"></span>
+                            <div class="notifications-inner" id="notifications_holder"></div>
+                        </div>
+                        <div class="table-title">
+                            <span class="icon-my_orders"></span>
+                            <p>{my_orders}</p>
+                            <span class="icon-my_orders"></span>
+                        </div>
+                        !panel_header_menu!
+                    </div>
+                    <div class="table-menu">
+                        <div class="table-inner">
+                            <div class="table-header">
+                                <div class="table-filters" id="table_filters" data-filters="table_show,table_date,table_packets">
+                                    <div class="filter-holder">
+                                        <p>{type}</p>
+                                        <div class="kalenux-select-holder">
+                                            <select class="kalenux-selects" data-all="0" data-type="select" data-name="order_type" id="table_packets" data-placeholder="{select_type}" data-data="order_types"></select>
+                                        </div>
+                                    </div>
+                                    <div class="filter-holder">
+                                        <p>{date}</p>
+                                        <input class="datepicker-here table-input" data-type="date" data-name="date" data-range="true" data-multiple-dates-separator=" | " id="table_date" data-position="bottom left" data-language="tr" placeholder="{select_date}" type="text" autocomplete="off">
+                                    </div>
+                                    <div class="filter-holder">
+                                        <p>{limit}</p>
+                                        <div class="kalenux-select-holder">
+                                            <select class="kalenux-selects" data-type="select" data-name="limit" id="table_show" data-placeholder="{select_limit}">
+                                                <option value="10">10</option> 
+                                                <option value="20">20</option>
+                                                <option value="40">40</option>
+                                                <option value="80">80</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-content" id="table_holder">
+                            </div>
+                            <div class="table-footer">
+                                <div class="table-nav" data-state="opage">
+                                    <li onclick="setNav('0')"><button>{first}</button></li>
+                                    <li onclick="setNav('-1')"><button>{previous}</button></li>
+                                    <ul class="table-nav-inner" id="table_navs">
+                                    </ul>
+                                    <li onclick="setNav('+1')"><button>{next}</button></li>
+                                    <li onclick="setNav('+2')"><button>{last}</button></li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    !account_template! !account_buy! !boost_options!
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/airdatepicker/js/datepicker.min.js"></script>
+    <script src="/plugins/airdatepicker/js/datepicker.tr.js"></script>
+    <script src="/js/lib/kalenux/card_table.js"></script>
+    <script src="/js/lib/kalenux/select.js"></script>
+    <script src="/js/lib/kalenux/popup.js"></script>
+    <script src="/js/lib/parse.{language}.js"></script>
+    <script src="/js/lib/kalenux/templater.js" defer></script>
+    <script src="/js/users/orders.{language}.js"></script>
+    <script src="/js/main/products/general/boost.{language}.js"></script>
+    <script src="/js/main/products/general/torder.js"></script>
+    <script src="/js/main/account-sale.js"></script>
+    !panel_footer!
+</body>
+
+</html>

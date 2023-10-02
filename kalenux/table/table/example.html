@@ -1,0 +1,69 @@
+!panel_tags!
+<link rel="preload" href="/css/lib/kalenux/kalenux_table.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/plugins/airdatepicker/css/datepicker.min.css">
+<link href="/css/lib/kalenux/select.css" rel="stylesheet">
+<link href="/css/lib/kalenux/onoff.css" rel="stylesheet">
+<title>Başvurular - {site}</title>
+</head>
+
+<body class="preload">
+    <div class="menu">
+        <div class="menu-outer">
+            <div class="menu-inner">
+                <div class="menu-bg"></div>
+                !panel_header!
+                <div class="menu-right">
+                    <div class="mr-top">
+                        <div class="table-title">
+                            <span class="icon-applications"></span>
+                            <p>Başvurular</p>
+                            <span class="icon-applications"></span>
+                        </div>
+                    </div>
+                    <div class="table-menu">
+                        <div class="table-inner">
+                            <div class="table-header">
+                                <div class="table-filters" id="table_filters" data-filters="table_show,table_date,table_search">
+                                    <div class="filter-holder">
+                                        <p>{category}</p>
+                                        <div class="kalenux-select-holder">
+                                            <select class="kalenux-selects" data-all="0" data-type="select" data-name="category" id="table_category" data-placeholder="{select_category}" data-data="categories"></select>
+                                        </div>
+                                    </div>
+                                    !search! !date! !limit!
+                                </div>
+                            </div>
+                            <div class="table-content">
+                                <div class="kalenux-tables" data-order='{"6":0}' data-nav="true" data-header="Alan,İsim Soyisim,Telefon,E-mail,Hakkında,CV,Başvuru Zamanı,İşlemler" data-type="user" data-url="get/applications" data-id="item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <kalenux-template id="item">
+        <item class="kt-cell">
+            <ul class="kt-cell-inner">
+                <li class="kt-item">+field:fields+</li>
+                <li class="kt-item">+fullname+</li>
+                <li class="kt-item">+phone+</li>
+                <li class="kt-item">+email+</li>
+                <li class="kt-item">+cover_letter+</li>
+                <li class="kt-item">+cv.parseCv+</li>
+                <li class="kt-item">+created_at+</li>
+                <li class="kt-item">+id.getActions+</li>
+            </ul>
+        </item>
+    </kalenux-template>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/airdatepicker/js/datepicker.min.js"></script>
+    <script src="/plugins/airdatepicker/js/datepicker.tr.js"></script>
+    <script src="/js/lib/kalenux/templater.js" defer></script>
+    <script src="/js/lib/kalenux/kalenux_table.js" defer></script>
+    <script src="/js/lib/kalenux/select.js"></script>
+    <script src="/js/lib/kalenux/popup.js"></script>
+    !panel_footer!
+</body>
+
+</html>

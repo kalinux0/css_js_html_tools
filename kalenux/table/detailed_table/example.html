@@ -1,0 +1,110 @@
+!panel_tags!
+<link rel="stylesheet" href="/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="/plugins/airdatepicker/css/datepicker.min.css">
+<link href="/css/lib/kalenux/select.css" rel="stylesheet">
+<link href="/css/lib/kalenux/card_table.css" rel="stylesheet">
+<title>İletişim - Do Eloboost</title>
+</head>
+
+<body class="preload">
+    <div class="menu">
+        <div class="menu-outer">
+            <div class="menu-inner">
+                <div class="menu-bg"></div>
+                !panel_header!
+                <div class="menu-right">
+                    <div class="mr-top">
+                        <div class="notifications-outer">
+                            <span class="icon-notifications"></span>
+                            <div class="notifications-inner" id="notifications_holder"></div>
+                        </div>
+                        <div class="table-title">
+                            <span class="icon-contact"></span>
+                            <p>İletişim</p>
+                            <span class="icon-contact"></span>
+                        </div>
+                        !panel_header_menu!
+                    </div>
+                    <div class="table-menu">
+                        <div class="table-inner">
+                            <div class="table-header">
+                                <div class="table-filters" id="table_filters" data-filters="table_show,table_date,table_search,table_cat">
+                                    <div class="filter-holder">
+                                        <p>Ara</p>
+                                        <div class="table-search">
+                                            <input class="table-input" data-type="search" data-name="search" id="table_search" placeholder="Tüm yazılarda arayın" autocomplete="off">
+                                            <button class="table-search-button" onclick="setNav('0')">Ara</button>
+                                        </div>
+                                    </div>
+                                    <div class="filter-holder">
+                                        <p>Kategori</p>
+                                        <div class="kalenux-select-holder">
+                                            <select class="kalenux-selects" data-type="select" data-name="cat" id="table_cat" data-placeholder="Kategori seçiniz" data-data="contact_categories"></select>
+                                        </div>
+                                    </div>
+                                    <div class="filter-holder">
+                                        <p>Tarih</p>
+                                        <input class="datepicker-here table-input" data-type="date" data-name="date" data-range="true" data-multiple-dates-separator=" | " id="table_date" data-position="bottom left" data-language="tr" placeholder="Tarih Aralığı Seçiniz" type="text" autocomplete="off">
+                                    </div>
+                                    <div class="filter-holder">
+                                        <p>Limit</p>
+                                        <div class="kalenux-select-holder">
+                                            <select class="kalenux-selects" data-type="select" data-name="limit" id="table_show" data-placeholder="Gösterim sayısı">
+                                                <option value="10">10</option> 
+                                                <option value="20">20</option>
+                                                <option value="40">40</option>
+                                                <option value="80">80</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-content">
+                                <table class="dataTable" id="datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>Kategori</th>
+                                            <th>İsim</th>
+                                            <th>Mail</th>
+                                            <th>Mesaj</th>
+                                            <th>Tarih</th>
+                                            <th>Eylemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table_holder">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-footer">
+                                <div class="table-nav">
+                                    <li onclick="setNav('0')"><button>İlk</button></li>
+                                    <li onclick="setNav('-1')"><button>Önceki</button></li>
+                                    <ul class="table-nav-inner" id="table_navs"></ul>
+                                    <li onclick="setNav('+1')"><button>Sonraki</button></li>
+                                    <li onclick="setNav('+2')"><button>Son</button></li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/airdatepicker/js/datepicker.min.js"></script>
+    <script src="/plugins/airdatepicker/js/datepicker.tr.js"></script>
+    <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/js/lib/kalenux/detailed_tables.js"></script>
+    <script src="/js/lib/kalenux/select.js"></script>
+    <script src="/js/lib/kalenux/popup.js"></script>
+    <script src="/js/lib/parse.{language}.js"></script>
+    <script src="/js/users/admin/contact.js"></script>
+    !panel_footer!
+</body>
+
+</html>
